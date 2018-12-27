@@ -142,8 +142,8 @@ function registerRoute(app,url,*args,**kwargs):
     app.add_url_rule(f"{url}/id/<username>", view_func=BaseView().getUser, methods=["GET"])
 ```
 
-### __init__.py
-Cần phải implement trong __init__.py những thứ sau:
+### \_\_init\_\_.py
+Cần phải implement trong \_\_init\_\_.py những thứ sau:
 
 ```python
 from .baseModel import BaseModel
