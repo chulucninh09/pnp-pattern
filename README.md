@@ -14,12 +14,13 @@ Lớp cao nhất, coi như là một bộ thư viện độc lập, có thể l�
 
 ### Model: Trái tim của component - Model là thứ tồn tại duy nhất, những thứ khác, có hay không, không quan trọng!
 Là một class chứa data và logic của component, bao gồm các thông tin về model và các method của model.
+
 **Data của model:** là các trường thông tin mà một object cần có
+
 **Method của model:** là các phương thức thao tác với data của model, bao gồm cả validation, và thao tác với database, tính toán... mà vốn model được design ra để phục vụ những task này.
 
 ### Controller/View:
-Là một class chứa các method khác để tương tác với model, trong tình huống các method của model chưa đáp ứng được nhu cầu customize của app, hoặc
-cần một class phụ để thực hiện các logic khác (thường thấy khi làm MethodView đối với REST API).
+Là một class chứa các method khác để tương tác với model, trong tình huống các method của model chưa đáp ứng được nhu cầu customize của app, hoặc cần một class phụ để thực hiện các logic khác (thường thấy khi làm MethodView đối với REST API).
 
 ### Route:
 Là một Class/function đăng ký route cho component, dùng khi dev web API. Dev có thể override Class/function này bằng cách gán thêm các route nếu cần.
