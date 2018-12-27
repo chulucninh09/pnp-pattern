@@ -96,7 +96,7 @@ import MethodView
 
 class BaseView(MethodView):
 
-    (async) def post(self,*args,**kwargs):
+    (async) def get(self,*args,**kwargs):
     #handle GET request
         return <Response>
 
