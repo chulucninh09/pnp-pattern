@@ -1,4 +1,5 @@
 #PLUG-AND-PLAY PATTERN
+A pattern to design plug-able components for python
 
 ##Ý tưởng bao trùm
 Plug-and-play pattern giúp cho dev tạo ra các component có thể tái sử dụng cho các dự án sau này, mà không phải modify quá nhiều, chỉ cần register component là có thể go-live.
