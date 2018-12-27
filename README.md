@@ -36,7 +36,7 @@ Lời khuyên để tăng tính plug-able của Component, là package các Comp
 ### Model:
 Các method cơ bản phải có:
 
-```
+```python
 class BaseModel():
 
     #Define data của model tại đây, hoặc trong __init___
@@ -90,7 +90,7 @@ Validate method sẽ không được tự động gọi khi gọi các method CR
 ### Controller/View:
 Các method cơ bản phải có nếu sử dụng cho REST API:
 
-```
+```python
 import BaseModel
 import MethodView
 
@@ -117,7 +117,7 @@ class BaseView(MethodView):
 
 Các function cơ bản cần phải có của Route:
 
-```
+```python
 import BaseView
 
 baseView = BaseView.as_view()
@@ -141,3 +141,13 @@ function registerRoute(app,url,*args,**kwargs):
     app.add_url_rule(f"{url}/register, view_func=BaseView().register, methods=["POST"])
     app.add_url_rule(f"{url}/id/<username>", view_func=BaseView().getUser, methods=["GET"])
 ```
+
+### __init__.py
+Cần phải implement trong __init__.py những thứ sau:
+
+```python
+from .baseModel import BaseModel
+from .baseView import BaseView
+from .baseRoute import registerRoute
+```
+
