@@ -1,31 +1,31 @@
-#PLUG-AND-PLAY PATTERN
+# PLUG-AND-PLAY PATTERN
 A pattern to design plug-able components for python
 
-##Ý tưởng bao trùm
+## Ý tưởng bao trùm
 Plug-and-play pattern giúp cho dev tạo ra các component có thể tái sử dụng cho các dự án sau này, mà không phải modify quá nhiều, chỉ cần register component là có thể go-live.
 
-##Các thành phần chính
-###Components:
+## Các thành phần chính
+### Components:
 Lớp cao nhất, coi như là một bộ thư viện độc lập, có thể lắp vào các project khác nhau mà gần như không phải thay đổi. Gồm:
 
 - Model
 - Controller/View
 - Route (đối với design REST API)
 
-###Model: Trái tim của component - Model là thứ tồn tại duy nhất, những thứ khác, có hay không, không quan trọng!
+### Model: Trái tim của component - Model là thứ tồn tại duy nhất, những thứ khác, có hay không, không quan trọng!
 Là một class chứa data và logic của component, bao gồm các thông tin về model và các method của model.
 **Data của model:** là các trường thông tin mà một object cần có
 **Method của model:** là các phương thức thao tác với data của model, bao gồm cả validation, và thao tác với database, tính toán... mà vốn model được design ra để phục vụ những task này.
 
-###Controller/View:
+### Controller/View:
 Là một class chứa các method khác để tương tác với model, trong tình huống các method của model chưa đáp ứng được nhu cầu customize của app, hoặc
 cần một class phụ để thực hiện các logic khác (thường thấy khi làm MethodView đối với REST API).
 
-###Route:
+### Route:
 Là một Class/function đăng ký route cho component, dùng khi dev web API. Dev có thể override Class/function này bằng cách gán thêm các route nếu cần.
 
-##Chi tiết về các thành phần của component
-###Model:
+## Chi tiết về các thành phần của component
+### Model:
 Các method cơ bản phải có:
 
 ```
@@ -77,9 +77,9 @@ class BaseModel():
         return <Boolean>
 ```
 
-validate method sẽ không được tự động gọi khi gọi các method CRUD. Dev phải gọi validate explicit trước khi gọi các method CRUD.
+Validate method sẽ không được tự động gọi khi gọi các method CRUD. Dev phải gọi validate explicit trước khi gọi các method CRUD.
 
-###Controller/View:
+### Controller/View:
 Các method cơ bản phải có nếu sử dụng cho REST API:
 
 ```
@@ -105,7 +105,7 @@ class BaseView(MethodView):
         return <Response>
 ```
 
-###Route:
+### Route:
 
 Các function cơ bản cần phải có của Route:
 
