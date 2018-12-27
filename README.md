@@ -25,6 +25,13 @@ Là một class chứa các method khác để tương tác với model, trong t
 ### Route:
 Là một Class/function đăng ký route cho component, dùng khi dev web API. Dev có thể override Class/function này bằng cách gán thêm các route nếu cần.
 
+## Stack công nghệ:
+Dev có thể tự do lựa chọn các stack công nghệ mà mình thấy thoải mái. Vì tính plug-able cao, nên dev có thể tái sử dụng các Model. Controller/View và Route có thể phải implement lại. 
+
+Tuy nhiên điều này vẫn hỗ trợ tính plug-able vì Component của một stack có thể tái sử dụng nếu project sau sử dụng cùng stack công nghệ với Component.
+
+Lời khuyên để tăng tính plug-able của Component, là package các Component này và đẩy lên registry.
+
 ## Chi tiết về các thành phần của component
 ### Model:
 Các method cơ bản phải có:
